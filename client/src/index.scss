@@ -1,0 +1,43 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2937; 
+  background-color: #f3f4f6; 
+}
+
+body, html {
+  width: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+  list-style: none;
+}
+
+body.light {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+body.dark {
+  background-color: #3d3d3d;
+  color: #fff;
+}
+
+.light .header {
+  --header-bg: #fff;
+  --header-text: #222;
+}
+
+.dark .header {
+  --header-bg: #222;
+  --header-text: #fff;
+}

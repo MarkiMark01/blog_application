@@ -1,0 +1,109 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  color: white;
+  height: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-left: 1rem;
+  border-bottom: 1px solid gray;
+
+  .logo {
+    font-weight: 600;
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .headerBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .themeSwitch {
+    position: relative;
+    width: 35px;
+    height: 20px;
+    background-color: #3d3d3d;
+    border-radius: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @media (max-width: 480px) {
+      width: 30px;
+      height: 18px;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #3d3d3d;
+    border-radius: 50%;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid gray;
+
+    @media (max-width: 480px) {
+      width: 14px;
+      height: 14px;
+      left: 2px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+      @media (max-width: 480px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .dark {
+    transform: translate(15px, -50%);
+
+    @media (max-width: 480px) {
+      transform: translate(12px, -50%);
+    }
+  }
+
+  .btnFlags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+
+    .flags {
+      width: 23px;
+      height: 23px;
+      cursor: pointer;
+
+      @media (max-width: 480px) {
+        width: 22px;
+      height: 22px;
+      }
+    }
+  }
+}
+

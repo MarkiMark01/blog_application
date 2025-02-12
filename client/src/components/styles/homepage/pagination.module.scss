@@ -1,0 +1,145 @@
+@use "../_variables" as *;
+
+.paginationBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $light-bg;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16%;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $light-bg;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid $light-border;
+    margin-bottom: 8px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-text;
+    color: $light-bg;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: darken($light-text, 10%);
+      transform: scale(1.05);
+    }
+
+    &:disabled {
+      background-color: $light-border;
+      cursor: not-allowed;
+    }
+  }
+
+  .pageInfo {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $light-text;
+  }
+
+  &.dark {
+    background-color: $dark-bg;
+
+    .pagination {
+      background-color: $dark-bg;
+      border: 1px solid $dark-border;
+    }
+
+    .button {
+      background-color: $dark-text;
+      color: $dark-bg;
+
+      &:hover {
+        background-color: lighten($dark-text, 10%);
+      }
+
+      &:disabled {
+        background-color: $dark-border;
+      }
+    }
+
+    .pageInfo {
+      color: $dark-text;
+    }
+  }
+
+  @media (max-width: 1135px) {
+    .pagination {
+      width: 30%;
+      padding: 0.8rem;
+      gap: 0.8rem;
+    }
+
+    .button {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .pageInfo {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pagination {
+      width: 33%;
+      padding: 0.6rem;
+      gap: 0.6rem;
+    }
+  
+    .button {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.8rem;
+    }
+  
+    .pageInfo {
+      font-size: 0.9rem;
+    }
+  }
+  
+
+  @media (max-width: 480px) {
+    .pagination {
+      width: 34%;
+    }
+
+    .button {
+      padding: 0.2rem 0.2rem;
+    }
+
+    .pageInfo {
+      font-size: 0.7rem;
+    }
+  }
+  @media (max-width: 362px){
+    .pagination {
+      width: 36%;
+    }
+
+    .button {
+      padding: 0.1rem 0.1rem;
+    }
+
+    .pageInfo {
+      font-size: 0.6rem;
+    }
+  }
+}
+

@@ -1,0 +1,28 @@
+export const eng = {
+  translation: {
+    "Page not found": "Page not found",
+    "It looks like you got lost": "It looks like you got lost",
+    "Return to the homepage": "Return to the homepage",
+    "Searching for posts...": "Searching for posts...",
+    "Fill in all fields!": "Fill in all fields!",
+    "Post successfully created!": "Post successfully created!",
+    Title: "Title",
+    "Post content": "Post content",
+    Create: "Create",
+    Delete: "Delete",
+    "No posts found": "No posts found",
+    "Write a comment...": "Write a comment...",
+    "Add comment": "Add comment",
+    "No comments yet": "No comments yet",
+    Back: "Back",
+    "Delete post": "Delete post",
+    "Post successfully deleted": "Post successfully deleted",
+    "Error deleting post": "Error deleting post",
+    "Comment added": "Comment added",
+    "Error adding comment": "Error adding comment",
+    "Comment deleted": "Comment deleted",
+    "Error deleting comment": "Error deleting comment",
+    "Post not found": "Post not found",
+  },
+};
+

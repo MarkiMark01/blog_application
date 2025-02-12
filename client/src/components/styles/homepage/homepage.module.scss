@@ -1,0 +1,16 @@
+@use "../_variables" as *;
+
+.homeContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 72rem;
+  margin: 0 auto;
+  background-color: $light-bg;
+  transition: background 0.3s ease-in-out;
+}
+
+.homeContainer.dark {
+  background-color: $dark-bg;
+}

@@ -1,0 +1,28 @@
+export const ukr = {
+  translation: {
+    "Page not found": "Сторінку не знайдено",
+    "It looks like you got lost": "Схоже, ви заблукали",
+    "Return to the homepage": "Повернутися на головну сторінку",
+    "Searching for posts...": "Пошук постів...",
+    "Fill in all fields!": "Заповніть всі поля!",
+    "Post successfully created!": "Пост успішно створено!",
+    Title: "Заголовок",
+    "Post content": "Вміст поста",
+    Create: "Створити",
+    Delete: "Видалити",
+    "No posts found": "Пости не знайдено",
+    "Write a comment...": "Напишіть коментар...",
+    "Add comment": "Додати коментар",
+    "No comments yet": "Ще немає коментарів",
+    Back: "Назад",
+    "Delete post": "Видалити пост",
+    "Post successfully deleted": "Пост успішно видалено",
+    "Error deleting post": "Помилка при видаленні поста",
+    "Comment added": "Коментар додано",
+    "Error adding comment": "Помилка при додаванні коментаря",
+    "Comment deleted": "Коментар видалено",
+    "Error deleting comment": "Помилка при видаленні коментаря",
+    "Post not found": "Пост не знайдено",
+  },
+};
+

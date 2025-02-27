@@ -28,7 +28,7 @@
 }
 
 .postTitle:hover {
-  color: darken($light-text, 15%);
+  color: $light-text;
 }
 
 .deleteButton {
@@ -46,7 +46,7 @@
 }
 
 .deleteButton:hover {
-  background-color: darken(#e74c3c, 10%);
+  background-color: #e74c3c;
   transform: scale(1.05);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .dark .postTitle:hover {
-  color: lighten($dark-text, 15%);
+  color: $dark-text;
 }
 
 @media (max-width: 768px) {

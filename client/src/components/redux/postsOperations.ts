@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Post } from "../types/Posts";
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://blog-app-b34j.onrender.com";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const response = await axios.get(`${BASE_URL}/posts`);

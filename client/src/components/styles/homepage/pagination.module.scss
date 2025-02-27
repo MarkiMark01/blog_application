@@ -38,7 +38,7 @@
     transition: background 0.3s, transform 0.2s;
 
     &:hover {
-      background-color: darken($light-text, 10%);
+      background-color: $light-text;
       transform: scale(1.05);
     }
 
@@ -67,7 +67,7 @@
       color: $dark-bg;
 
       &:hover {
-        background-color: lighten($dark-text, 10%);
+        background-color: $dark-text;
       }
 
       &:disabled {

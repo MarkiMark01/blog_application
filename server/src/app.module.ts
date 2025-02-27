@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PostModule } from './post/post.module';
 import { CommentModule } from './comment/comment.module';
-import { AppController } from './app.controller'; // Додаємо
-import { AppService } from './app.service'; // Додаємо
+import { AppController } from './app.controller';
+import { AppService } from './app.service'; 
 
 @Module({
   imports: [

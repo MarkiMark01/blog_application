@@ -9,6 +9,7 @@
   height: 100%;
   background-color: $light-bg;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
 }
 
 .noPosts {
@@ -17,6 +18,9 @@
   font-weight: bold;
   color: $light-text;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dark {
@@ -33,6 +37,9 @@
   font-weight: bold;
   margin-left: 10px;
   animation: fadeIn 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .serverReady {
@@ -41,6 +48,17 @@
   font-weight: bold;
   margin-left: 10px;
   animation: fadeIn 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.serverMessage {
+  font-size: 1rem;
+  color: $text-color;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 @keyframes fadeIn {
@@ -70,4 +88,5 @@
     font-size: 18px;
   }
 }
+
 

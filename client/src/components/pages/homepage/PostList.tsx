@@ -1,14 +1,25 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-// import { useTranslation } from "react-i18next";
 import PostItem from "./PostItem";
 import { PostListProps } from "../../types/Posts";
 import styles from "../../styles/homepage/postlist.module.scss";
-import Loader from "../../loader/Loader";
+import { BeatLoader } from "react-spinners";
 
 const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
-  // const { t } = useTranslation();
   const theme = useSelector((state: RootState) => state.theme.mode);
+  
+  const [timeLeft, setTimeLeft] = useState(50);
+
+  useEffect(() => {
+    if (posts.length === 0 && timeLeft > 0) {
+      const timer = setInterval(() => {
+        setTimeLeft((prevTime) => prevTime - 1);
+      }, 1000); 
+
+      return () => clearInterval(timer);
+    }
+  }, [posts, timeLeft]);
 
   return (
     <ul className={`${styles.postList} ${theme === "dark" ? styles.dark : ""}`}>
@@ -18,8 +29,12 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
         ))
       ) : (
         <p className={`${styles.noPosts} ${theme === "dark" ? styles.darkText : ""}`}>
-          {/* {t("No posts found")} */}
-          <Loader/>
+          <BeatLoader />
+          {timeLeft > 0 ? (
+            <span className={styles.timeLeft}>{`Time left: ${timeLeft}s`}</span>
+          ) : (
+            <span className={styles.serverReady}>Server is ready!</span>
+          )}
         </p>
       )}
     </ul>
@@ -27,6 +42,8 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
 };
 
 export default PostList;
+
+
 
 
 

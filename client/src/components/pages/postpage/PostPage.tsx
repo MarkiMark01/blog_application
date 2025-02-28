@@ -56,7 +56,6 @@ const PostPage = () => {
   const handleAddComment = async (content: string) => {
     if (!id) return;
     try {
-      // Відправка запиту для створення коментаря з додаванням заголовка Content-Type
       await dispatch(createComment({ postId: Number(id), content })).unwrap();
       await dispatch(fetchPosts());
       toast.success(t("Comment added"));

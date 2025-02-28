@@ -25,8 +25,8 @@
     border-radius: 4px;
     font-size: 1rem;
     transition: border 0.3s, background 0.3s;
-    box-sizing: border-box;  /* Для коректного відображення padding */
-    position: relative;  /* Для позиціонування кнопки всередині поля */
+    box-sizing: border-box; 
+    position: relative;  
   }
 
   &.dark input,

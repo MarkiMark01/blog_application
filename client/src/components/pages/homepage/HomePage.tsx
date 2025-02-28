@@ -29,20 +29,19 @@ const HomePage = () => {
   const handleCreatePost = async (title: string, content: string) => {
     try {
       await dispatch(createPost({ title, content })).unwrap();
-      toast.success("Пост успішно створений!");
+      toast.success("Post successfully created!");
       setFilter(""); 
-      setCurrentPage(1); 
     } catch (err) {
-      toast.error("Помилка при створенні поста");
+      toast.error("Error adding comment");
     }
   };
 
   const handleDeletePost = async (id: number) => {
     try {
       await dispatch(deletePost(id)).unwrap();
-      toast.success("Пост видалено!");
+      toast.success("Post successfully deleted");
     } catch (err) {
-      toast.error("Помилка при видаленні поста");
+      toast.error("Error deleting post");
     }
   };
 

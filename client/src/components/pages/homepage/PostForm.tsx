@@ -23,7 +23,7 @@ const PostForm: React.FC<PostFormProps> = ({ handleCreatePost }) => {
         emojiButtonRef.current &&
         !emojiButtonRef.current.contains(event.target as Node)
       ) {
-        setShowEmojiPicker(false); // Закриваємо пікер
+        setShowEmojiPicker(false);
       }
     };
 
@@ -43,13 +43,12 @@ const PostForm: React.FC<PostFormProps> = ({ handleCreatePost }) => {
     }
 
     handleCreatePost(newPost.title, newPost.content);
-    toast.success(t("Post successfully created!"));
     setNewPost({ title: "", content: "" });
   };
 
   const handleEmojiSelect = (emoji: { emoji: string }) => {
     setNewPost((prev) => ({ ...prev, content: prev.content + emoji.emoji }));
-    setShowEmojiPicker(false); // Закриваємо пікер після вибору емоджі
+    setShowEmojiPicker(false); 
   };
 
   return (

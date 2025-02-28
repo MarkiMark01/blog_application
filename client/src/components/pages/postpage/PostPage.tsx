@@ -26,9 +26,9 @@ const PostPage = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const { posts } = useSelector((state: RootState) => state.posts);
-  const [localComments, setLocalComments] = useState<
-    { id: number; content: string }[]
-  >([]);
+  const [localComments, setLocalComments] = useState<{ id: number; content: string }[]>(
+    []
+  );
   const theme = useSelector((state: RootState) => state.theme.mode);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -56,6 +56,7 @@ const PostPage = () => {
   const handleAddComment = async (content: string) => {
     if (!id) return;
     try {
+      // Відправка запиту для створення коментаря з додаванням заголовка Content-Type
       await dispatch(createComment({ postId: Number(id), content })).unwrap();
       await dispatch(fetchPosts());
       toast.success(t("Comment added"));
@@ -89,9 +90,7 @@ const PostPage = () => {
 
   return (
     <section
-      className={`${styles.postContainer} ${
-        theme === "dark" ? styles["dark"] : ""
-      }`}
+      className={`${styles.postContainer} ${theme === "dark" ? styles["dark"] : ""}`}
     >
       <PostContent
         title={post.title}
@@ -113,4 +112,5 @@ const PostPage = () => {
 };
 
 export default PostPage;
+
 

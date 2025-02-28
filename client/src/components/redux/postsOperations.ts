@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Post } from "../types/Posts";
 
+// const BASE_URL = "http://localhost:3000";
 const BASE_URL = "https://blog-application-a9ll.onrender.com";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -28,10 +29,19 @@ export const deletePost = createAsyncThunk(
 export const createComment = createAsyncThunk(
   "comments/createComment",
   async ({ postId, content }: { postId: number; content: string }) => {
-    const response = await axios.post(`${BASE_URL}/posts/${postId}/comments`, { content });
+    const response = await axios.post(
+      `${BASE_URL}/posts/${postId}/comments`,
+      { content, postId }, 
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
     return response.data;
   }
 );
+
 
 export const deleteComment = createAsyncThunk(
   "comments/deleteComment",
@@ -40,3 +50,4 @@ export const deleteComment = createAsyncThunk(
     return commentId;
   }
 );
+

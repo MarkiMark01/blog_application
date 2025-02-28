@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import PostItem from "./PostItem";
 import { PostListProps } from "../../types/Posts";
 import styles from "../../styles/homepage/postlist.module.scss";
+import Loader from "../../loader/Loader";
 
 const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const theme = useSelector((state: RootState) => state.theme.mode);
 
   return (
@@ -17,7 +18,8 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
         ))
       ) : (
         <p className={`${styles.noPosts} ${theme === "dark" ? styles.darkText : ""}`}>
-          {t("No posts found")}
+          {/* {t("No posts found")} */}
+          <Loader/>
         </p>
       )}
     </ul>

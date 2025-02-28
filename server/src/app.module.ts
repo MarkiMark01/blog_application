@@ -20,7 +20,7 @@ import { AppService } from './app.service';
         password: configService.get<string>('DATABASE_PASSWORD'),
         database: configService.get<string>('DATABASE_NAME'),
         autoLoadEntities: true,
-        synchronize: true, // false (для продакшену)
+        synchronize: true,
       }),
     }),
     PostModule,

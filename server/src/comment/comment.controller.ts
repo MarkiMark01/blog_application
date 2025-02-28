@@ -1,4 +1,4 @@
-import { Controller, Post, Delete, Body, Param, ParseIntPipe, NotFoundException, Query, Get } from '@nestjs/common';
+import { Controller, Post, Body, Param, ParseIntPipe, NotFoundException } from '@nestjs/common';
 import { CommentService } from './comment.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { PostService } from '../post/post.service';
@@ -15,17 +15,16 @@ export class CommentController {
     @Param('postId', ParseIntPipe) postId: number,
     @Body() createCommentDto: CreateCommentDto,
   ) {
+    console.log(createCommentDto); 
     const post = await this.postService.findOne(postId);
     if (!post) {
       throw new NotFoundException(`Post with ID ${postId} not found`);
     }
     return this.commentService.create(createCommentDto, post);
   }
+}
 
-  @Delete(':id')
-  async remove(@Param('id', ParseIntPipe) id: number) {
-    return this.commentService.remove(id);
-  }
+
 
   // @Get()
   // async findAll(
@@ -44,6 +43,6 @@ export class CommentController {
   //     // sortBy, order
   //   );
   // }
-}
+
 
 

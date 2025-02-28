@@ -9,6 +9,7 @@
   background-color: $light-bg;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease-in-out;
+  position: relative;
 
   &.dark {
     background-color: $dark-bg;
@@ -24,16 +25,8 @@
     border-radius: 4px;
     font-size: 1rem;
     transition: border 0.3s, background 0.3s;
-
-    &::placeholder {
-      color: #888;
-    }
-
-    &:focus {
-      border-color: $light-text;
-      outline: none;
-      background-color: #f1f1f1;
-    }
+    box-sizing: border-box;  /* Для коректного відображення padding */
+    position: relative;  /* Для позиціонування кнопки всередині поля */
   }
 
   &.dark input,
@@ -41,11 +34,6 @@
     border: 1px solid $dark-border;
     background-color: #555;
     color: $dark-text;
-
-    &:focus {
-      border-color: $dark-text;
-      background-color: #666;
-    }
   }
 
   button {
@@ -65,6 +53,48 @@
       background-color: $dark-border;
     }
   }
+
+  .emojiButton {
+    position: absolute;
+    bottom: 5px; 
+    right: 5px;  
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .emojiPickerWrapper {
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .emoji-picker-react {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    font-size: 1.2rem;
+    width: 250px;
+  }
+  
+  .emoji-picker-react .emoji-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .emoji-picker-react .emoji-group .emoji-item {
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+  .emoji-picker-react .emoji-group .emoji-item:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  
 
   @media (max-width: 768px) {
     padding: 1rem;

@@ -26,6 +26,7 @@
 
     &::placeholder {
       color: #888;
+      font-style: italic; /* Додано стилізацію плейсхолдера */
     }
 
     &:focus {
@@ -64,6 +65,66 @@
     }
   }
 
+  .emojiButton {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .emojiPickerWrapper {
+    position: absolute;
+    top: 350px;
+    right: 10px;
+    z-index: 1000;
+  }
+
+  .emoji-picker-react {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    font-size: 1.2rem;
+    width: 250px;
+  }
+
+  .emoji-picker-react .emoji-search {
+    display: flex;
+    justify-content: space-between; /* Встановлено space-between */
+    padding: 0.5rem;
+    position: relative;
+  }
+
+  .emoji-picker-react .emoji-search input {
+    width: 100%;
+    padding-left: 30px; /* Відступ від значка */
+  }
+
+  .emoji-picker-react .emoji-search .emoji-search__icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .emoji-picker-react .emoji-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .emoji-picker-react .emoji-group .emoji-item {
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .emoji-picker-react .emoji-group .emoji-item:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+
   @media (max-width: 768px) {
     padding: 1rem;
 
@@ -93,3 +154,4 @@
     }
   }
 }
+

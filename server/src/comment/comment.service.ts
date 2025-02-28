@@ -24,6 +24,8 @@ export class CommentService {
     await this.commentRepo.remove(comment);
     return { message: 'Коментар успішно видалено' };
   }
+}
+
 
   // async findAll(
   //   postId: number,
@@ -55,7 +57,7 @@ export class CommentService {
   //     totalPages: Math.ceil(total / limit),
   //   };
   // }
-}
+
 
 
 

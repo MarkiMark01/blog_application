@@ -28,31 +28,32 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
 
   return (
     <ul className={`${styles.postList} ${theme === "dark" ? styles.dark : ""}`}>
-      {posts.length > 0 ? (
-        posts.map((post) => (
-          <PostItem key={post.id} post={post} handleDeletePost={handleDeletePost} />
-        ))
-      ) : (
-        !serverReady && (
-          <div className={`${styles.noPosts} ${theme === "dark" ? styles.darkText : ""}`}>
-            <BeatLoader color="#ff6347" />
-            <span className={styles.timeLeft}>{`Time left: ${timeElapsed}s`}</span>
-            <span className={styles.serverMessage}>
-              Please note: The server is hosted on render.com, so it may take a little longer than expected. 
-              Thank you for your patience!
-            </span>
-          </div>
-        )
-      )}
+      {posts.length > 0
+        ? posts.map((post) => (
+            <PostItem
+              key={post.id}
+              post={post}
+              handleDeletePost={handleDeletePost}
+            />
+          ))
+        : !serverReady && (
+            <div
+              className={`${styles.noPosts} ${
+                theme === "dark" ? styles.darkText : ""
+              }`}
+            >
+              <BeatLoader color="#ff6347" />
+              <span
+                className={styles.timeLeft}
+              >{`Time left: ${timeElapsed}s`}</span>
+              <span className={styles.serverMessage}>
+                The server is hosted on render.com, which may take more than 50
+                seconds to start. Thank you for your patience!
+              </span>
+            </div>
+          )}
     </ul>
   );
 };
 
 export default PostList;
-
-
-
-
-
-
-

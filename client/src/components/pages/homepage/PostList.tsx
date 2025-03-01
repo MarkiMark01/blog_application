@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import PostItem from "./PostItem";
 import { PostListProps } from "../../types/Posts";
+import { BeatLoader } from "react-spinners";
 import styles from "../../styles/homepage/postlist.module.scss";
 
 const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
@@ -42,7 +42,7 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
                 theme === "dark" ? styles.darkText : ""
               }`}
             >
-              <BeatLoader color="#ff6347" />
+              <BeatLoader/>
               <span
                 className={styles.timeLeft}
               >{`Time left: ${timeElapsed}s`}</span>

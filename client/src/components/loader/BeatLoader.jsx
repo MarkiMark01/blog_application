@@ -11,7 +11,7 @@ const BeatLoader = () => {
         height: "100vh",
       }}
     >
-      <BeatLoader color="lightblue" size={15} />
+      <BeatLoader color="blue" size={15} />
     </div>
   );
 };

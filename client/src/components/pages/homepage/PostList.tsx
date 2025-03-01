@@ -18,7 +18,7 @@ const PostList: React.FC<PostListProps> = ({ posts, handleDeletePost }) => {
 
     const timeout = setTimeout(() => {
       setServerReady(true);
-    }, 500000);
+    }, 90000);
 
     return () => {
       clearInterval(interval);
